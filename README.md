@@ -3,7 +3,7 @@
 ## Description:
 * Hangman that uses 2 server side API's
 
-##Outline:
+## Outline:
 
 
 ## How to Play:
