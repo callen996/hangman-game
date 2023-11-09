@@ -20,7 +20,7 @@
 
 
 
-
+## How to Play the Game
 
 ## APIs used:
 
