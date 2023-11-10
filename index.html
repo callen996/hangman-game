@@ -4,6 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                clifford: '#da373d',
+              }
+            }
+          }
+        }
+      </script>
     <title>Hangman</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -12,12 +24,49 @@
     <header>
         <div class="heading">
             <h1 id="title">Hangmanish</h1>
-    </div>
+        </div>
         <div id="word"></div>
         <div id="guesses"></div>
         <div id="buttons">
-                 <!-- Add letter buttons here (A-Z) -->
+            <ul id="alphabet">
+                <li id="letter">A</li>
+                <li id="letter">B</li>
+                <li id="letter">C</li>
+                <li id="letter">D</li>
+                <li id="letter">E</li>
+                <li id="letter">F</li>
+                <li id="letter">G</li>
+                <li id="letter">H</li>
+                <li id="letter">I</li>
+                <li id="letter">J</li>
+                <li id="letter">K</li>
+                <li id="letter">L</li>
+                <li id="letter">M</li>
+                <li id="letter">N</li>
+                <li id="letter">O</li>
+                <li id="letter">P</li>
+                <li id="letter">Q</li>
+                <li id="letter">R</li>
+                <li id="letter">S</li>
+                <li id="letter">T</li>
+                <li id="letter">U</li>
+                <li id="letter">V</li>
+                <li id="letter">W</li>
+                <li id="letter">X</li>
+                <li id="letter">Y</li>
+                <li id="letter">Z</li>
+            </ul>
         </div>
+        <p id="categoryName"></p>
+        <div id="blanks">
+            <ul id="guess">
+                <li class="pick">_</li>
+            </ul>
+        </div>
+        <p id="turns">You have X turns left</p>
+        <div class="container">
+            <button id="reset">Play Again?</button>
+        </div>   
     </header>
 
     <script src="./script.js"></script>

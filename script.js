@@ -16,3 +16,4 @@ fetch(randomWordUrl)
   .then(function (data) {
     alert(data.data.url)
   });
+
