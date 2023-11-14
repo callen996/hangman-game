@@ -41,6 +41,23 @@ $('.letterButton').on('click', function() {
 // Takes a letter inputted by the player and compares it to the randomly generated word
 function processLetter(letter, word) {
   console.log("Is " + letter + " in " + word + "?");
+
+  var letterInWord = false;
+
+  var splitWord = word.toString().split("");
+
+  for (i = 0; i < splitWord.length; i++) {
+    if (letter === splitWord[i]) {
+      letterInWord = true;
+    }
+  }
+
+  if (letterInWord) {
+    console.log(letter + " is in " + word);
+  }
+  else {
+    console.log(letter + " is NOT in " + word);
+  }
 }
   
   
