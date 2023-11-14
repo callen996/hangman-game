@@ -1,63 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
     <title>Hangman</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .content-auto {
+          content-visibility: auto;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
 
-<body class="flex-box gradient_bg">
-    <header>
-        <div class="heading">
-            <h1 id="title">Hangmanish</h1>
+  <body class="flex-box gradient_bg">
+    <div class="prose dark:prose-invert">
+      <div class="lg:content-auto">  
+      <header class="container mx-auto">
+        <div class="flex container mx-auto justify-center my-3">
+          <h1 class="text-5xl text-clifford -skew-y-6" id="title">Hangmanish</h1>
         </div>
-        <div id="word"></div>
-        <div id="guesses"></div>
-        <div id="buttons">
-            <ul id="alphabet">
-                <li id="letter">A</li>
-                <li id="letter">B</li>
-                <li id="letter">C</li>
-                <li id="letter">D</li>
-                <li id="letter">E</li>
-                <li id="letter">F</li>
-                <li id="letter">G</li>
-                <li id="letter">H</li>
-                <li id="letter">I</li>
-                <li id="letter">J</li>
-                <li id="letter">K</li>
-                <li id="letter">L</li>
-                <li id="letter">M</li>
-                <li id="letter">N</li>
-                <li id="letter">O</li>
-                <li id="letter">P</li>
-                <li id="letter">Q</li>
-                <li id="letter">R</li>
-                <li id="letter">S</li>
-                <li id="letter">T</li>
-                <li id="letter">U</li>
-                <li id="letter">V</li>
-                <li id="letter">W</li>
-                <li id="letter">X</li>
-                <li id="letter">Y</li>
-                <li id="letter">Z</li>
-            </ul>
-        </div>
-        <p id="categoryName"></p>
-        <div id="blanks">
-            <ul id="guess">
-                <li class="pick">_</li>
-            </ul>
-        </div>
-        <p id="turns">You have X turns left</p>
-        <div class="container">
-            <button id="reset">Play Again?</button>
-        </div>   
-    </header>
+      </header>
+    </div>
+    <div id="word"></div>
+    <div id="guesses"></div>
+    <div class="container mx-auto w-screen h-96" id="buttons">
+      <!-- Add letter buttons here (A-Z) -->
+      <div
+        class="flex grid-row-1 text-3xl font-bold grid-cols-10 gap-4 py-5 justify-center"
+      >
+        <button id="Q" class="bg-white letterButton">Q</button>
+        <button id="W" class="bg-white letterButton">W</button>
+        <button id="E" class="bg-white letterButton">E</button>
+        <button id="R" class="bg-white letterButton">R</button>
+        <button id="T" class="bg-white letterButton">T</button>
+        <button id="Y" class="bg-white letterButton">Y</button>
+        <button id="U" class="bg-white letterButton">U</button>
+        <button id="I" class="bg-white letterButton">I</button>
+        <button id="O" class="bg-white letterButton">O</button>
+        <button id="P" class="bg-white letterButton">P</button>
+      </div>
+      <div
+        class="flex grid-row-1 text-3xl font-bold grid-cols-10 gap-4 py-5 justify-center"
+      >
+        <button id="A" class="bg-white letterButton">A</button>
+        <button id="S" class="bg-white letterButton">S</button>
+        <button id="D" class="bg-white letterButton">D</button>
+        <button id="F" class="bg-white letterButton">F</button>
+        <button id="G" class="bg-white letterButton">G</button>
+        <button id="H" class="bg-white letterButton">H</button>
+        <button id="J" class="bg-white letterButton">J</button>
+        <button id="K" class="bg-white letterButton">K</button>
+        <button id="L" class="bg-white letterButton">L</button>
+      </div>
+      
+      <div
+        class="flex grid-row-1 text-3xl font-bold grid-cols-10 gap-4 py-5 justify-center"
+      >
+        <button id="Z" class="bg-white letterButton">Z</button>
+        <button id="X" class="bg-white letterButton">X</button>
+        <button id="C" class="bg-white letterButton">C</button>
+        <button id="V" class="bg-white letterButton">V</button>
+        <button id="B" class="bg-white letterButton">B</button>
+        <button id="N" class="bg-white letterButton">N</button>
+        <button id="M" class="bg-white letterButton">M</button>
+      </div>
 
+      <div class="pointer"></div>
+      
+    </div>
+    <div>
+      <ul id="blanks-list" class="flex justify-center">
+        
+      </ul>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
     <script src="./script.js"></script>
-</body>
+  </body>
 </html>
-    

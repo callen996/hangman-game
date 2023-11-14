@@ -1,0 +1,39 @@
+
+
+
+.letterButton {
+    border: 3px ridge #149CEA;
+    width: 80px;
+    height: 80px;
+    outline: none;
+    background-color: transparent;
+    transition: 1s;
+    border-radius: 0.3em;
+    cursor: pointer;
+    transition: all 0.5s ease-in;
+}
+
+.letterButton:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+ .letterButton:hover::before, .letterButton:hover::after {
+    transform: scale(0)
+  }
+
+  .letterButton:hover {
+    box-shadow: inset 0px 0px 25px #1479EA;
+  }
+
+  .flip {
+    transform: rotatey(180deg);
+    color: white;
+    pointer-events: none;
+  }
+
+  body {
+    background-color: #85FFBD;
+    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+  }
+  
