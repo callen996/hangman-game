@@ -40,10 +40,9 @@ $('.letterButton').on('click', function() {
 
 // Takes a letter inputted by the player and compares it to the randomly generated word
 function processLetter(letter, word) {
-  console.log("Is " + letter + " in " + word + "?");
-
   var letterInWord = false;
 
+  // Split the word into an array of individual characters
   var splitWord = word.toString().split("");
 
   for (i = 0; i < splitWord.length; i++) {
@@ -54,9 +53,13 @@ function processLetter(letter, word) {
 
   if (letterInWord) {
     console.log(letter + " is in " + word);
+    // Todo: Update the blanks to show the guessed letter here
+    // Todo: If there are no blanks left, end the game on a win
   }
   else {
     console.log(letter + " is NOT in " + word);
+    // Todo: Display a sad gif
+    // Todo: If guess amount has been reached, end the game on a loss
   }
 }
   
