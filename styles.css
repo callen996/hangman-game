@@ -1,5 +1,6 @@
+/* Letter keys */
 .letterButton {
-    border: 3px ridge #149CEA;
+    border: 3px ridge #4fcb89;
     width: 80px;
     height: 80px;
     outline: none;
@@ -20,11 +21,52 @@
   }
 
   .letterButton:hover {
-    box-shadow: inset 0px 0px 25px #1479EA;
+    box-shadow: inset 0px 0px 25px #63bd8d;
   }
 
   .flip {
     transform: rotatey(180deg);
     color: white;
     pointer-events: none;
+
+  }
+
+
+
+
+
+
+
+
+  
+  /* Hint modal */
+  .hintModal {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #85FFBD;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .hintModal:hover {
+    background-color: #23c483;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+  
+  .hintModal:active {
+    transform: translateY(-1px);
+  }
+
+  .exit:hover {
+    color: red;
   }

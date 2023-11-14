@@ -2,15 +2,39 @@ $('.letterButton').on('click', function() {
     $(this).addClass('flip');
 });
 
+const hintBox = document.getElementById('hintBox');
+
 var randomWordUrl = "https://random-word-api.vercel.app/api?words=1&length=7&type=uppercase"
 var sadGifUrl = "https://api.giphy.com/v1/gifs/random?api_key=VZP80HfNoEAn2JpnCtbMfqEGN4HAuZF7&tag=sad&rating=pg-13"
+
 
 fetch(randomWordUrl)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
-    alert(data)
+    
+
+
+
+
+
+
+
+
+    // Code for getting the definition hint
+    var chosenWord = data[0];
+    console.log(data[0]);
+    var definitionUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/"
+
+    fetch(definitionUrl + chosenWord)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data[0].meanings[0].definitions[0].definition);
+        hintBox.textContent = data[0].meanings[0].definitions[0].definition
+      })
   });
 
   fetch(sadGifUrl)
@@ -39,3 +63,5 @@ function drawFromLocalStorage() {
         console.log(name + ": " + score);
     }
 }
+
+
