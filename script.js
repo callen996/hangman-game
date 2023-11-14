@@ -1,7 +1,3 @@
-$('.letterButton').on('click', function() {
-    $(this).addClass('flip');
-});
-
 var randomWordUrl = "https://random-word-api.vercel.app/api?words=1&length=7&type=uppercase"
 var sadGifUrl = "https://api.giphy.com/v1/gifs/random?api_key=VZP80HfNoEAn2JpnCtbMfqEGN4HAuZF7&tag=sad&rating=pg-13"
 var guessThisWord
@@ -9,11 +5,14 @@ var sadGif
 var blanksNum
 
 
+var randomWord;
+
 fetch(randomWordUrl)
   .then(function (response) {
     return response.json();
   })
   .then(function (data) {
+    randomWord = data;
     guessThisWord = data[0]
     console.log(guessThisWord)
     blanksNum = guessThisWord.length
@@ -30,6 +29,20 @@ fetch(randomWordUrl)
     console.log(sadGif)
   });
 
+
+
+$('.letterButton').on('click', function() {
+  $(this).addClass('flip');
+
+  var chosenLetter = $(this).attr('id');
+  processLetter(chosenLetter, randomWord);
+});
+
+// Takes a letter inputted by the player and compares it to the randomly generated word
+function processLetter(letter, word) {
+  console.log("Is " + letter + " in " + word + "?");
+}
+  
   
 function makeBlanks() {
   for (let i = 0; i < blanksNum; i++) {
@@ -43,7 +56,7 @@ function makeBlanks() {
   }
 }
 
-  
+
 // Saves an name/score pair to local storage, using the name as the key
 function saveToLocalStorage(name, score) {
     localStorage.setItem(name, JSON.stringify(score));
