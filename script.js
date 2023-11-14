@@ -18,6 +18,7 @@ fetch(randomWordUrl)
     console.log(guessThisWord)
     blanksNum = guessThisWord.length
     console.log(blanksNum)
+    makeBlanks()
   });
 
   fetch(sadGifUrl)
@@ -29,3 +30,15 @@ fetch(randomWordUrl)
     console.log(sadGif)
   });
 
+  
+function makeBlanks() {
+  for (let i = 0; i < blanksNum; i++) {
+    var newLi = document.createElement("li")
+    newLi.setAttribute("class", "inline m-3")
+    newLi.setAttribute("id", [i])
+    var newText = document.createTextNode("__")
+    newLi.appendChild(newText)
+    var element = document.getElementById("blanks-list")
+    element.appendChild(newLi)
+  }
+}
