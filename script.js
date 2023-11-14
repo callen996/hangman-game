@@ -39,3 +39,4 @@ function drawFromLocalStorage() {
         console.log(name + ": " + score);
     }
 }
+
