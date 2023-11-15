@@ -16,12 +16,6 @@ fetch(randomWordUrl)
     
 
 
-
-
-
-
-
-
     // Code for getting the definition hint
     var chosenWord = data[0];
     console.log(data[0]);
