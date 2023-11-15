@@ -1,4 +1,7 @@
 /* Letter keys */
+
+
+
 .letterButton {
     border: 3px ridge #4fcb89;
     width: 80px;
@@ -30,6 +33,28 @@
     pointer-events: none;
 
   }
+
+  body {
+    background-color: #85FFBD;
+    background-image: linear-gradient(45deg, #85FFBD 0%, #FFFB7D 100%);
+  }
+  
+ #playButton, #muteButton {
+  width: 50px;
+  height: 50px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  
+}
+
+#playButton {
+  background: url('./images/volume\ on.jpg') no-repeat;
+}
+
+#muteButton {
+  background: url('./images/volume\ off.jpg') no-repeat;
+}
 
   /* Hint modal */
   .hintModal {

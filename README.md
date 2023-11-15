@@ -2,15 +2,10 @@
 
 ## Description:
 * Hangman that uses 2 server side API's
-
-## Outline:
-
-
-## How to Play:
+* This server side api uses random word api's and also a dictionary like api
 
 
 
-## Training:
 
 ## Photo:
 
@@ -20,9 +15,9 @@
 
 
 
-## How to Play the Game
+
 
 ## APIs used:
 
 
-## Link:
+## Deployed Link:
