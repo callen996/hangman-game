@@ -295,3 +295,21 @@ window.onload = function () {
       }
     }
   }
+// Displays the game over window and lets the player input their score
+// Win parameter is a boolean, set to true if the player won and false if they lost
+function gameOver(win, score) {
+  // Display the game over modal
+  var gameOverModal = $('#game-over-modal')
+  gameOverModal.css("display", "block");
+
+  // The rest
+  var statusText = $('#status-text');
+  if (win) {
+    statusText.html("You won! Your score is " + score);
+  }
+  else {
+    statusText.html("You lost!");
+  }
+}
+
+gameOver(false, 2);
