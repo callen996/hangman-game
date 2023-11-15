@@ -21,7 +21,6 @@ var audio = new Audio('audio/Happy Hopping_Var1.wav');
       }
     });
 
-
 //could add random number for length of word --- current is length=7
 
 var randomWordUrl = "https://random-word-api.vercel.app/api?words=1&length=7&type=uppercase"
@@ -31,7 +30,6 @@ var wordLetterList
 var sadGif
 var blanksNum
 var clickedLetter
-
 
 // gets a random word from api and sets it to coresponding var
 fetch(randomWordUrl)
