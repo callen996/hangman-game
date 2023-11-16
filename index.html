@@ -30,9 +30,9 @@
 
   <body class="flex-box gradient_bg">
     <div class="prose dark:prose-invert">
-      <div class="lg:content-auto">  
-      <header class="container mx-auto">
-        <div class="flex container mx-auto justify-center my-3">
+      <div class="lg:content-auto w-screen">  
+      <header class="container mx-auto h-40">
+        <div class="flex container mx-auto justify-center align-middle my-5">
           <h1 class="animate-pulse bg-green-500 hover:bg-green-300 text-7xl underline decoration-sky-500 hover:decoration-blue-400 text-clifford text-blue-900 -skew-y-6" id="title">Hangman</h1>
         </div>
       </header>
@@ -41,7 +41,7 @@
     <div id="guesses"></div>
     <div class="container mx-auto w-screen h-96" id="buttons">
       <!-- Hint modal -->
-      <button class="hintModal" onclick="my_modal_3.showModal()">Need a hint?</button>
+      <button class="hintModal mx-10" onclick="my_modal_3.showModal()">Need a hint?</button>
       <dialog id="my_modal_3" class="modal rounded-lg ">
         <div class="modal-box m-5">
           <form method="dialog">
@@ -53,7 +53,7 @@
       </dialog>
       <!-- Add letter buttons here (A-Z) -->
       <div
-        class="flex grid-row-1 text-3xl font-bold grid-cols-10 gap-4 py-5 justify-center"
+        class="flex grid-row-1 text-3xl font-bold grid-cols-10 gap-4 py-5 justify-center w-screen"
       >
         <button id="Q" class="bg-white letterButton transition duration-300 ease-in-out">Q</button>
         <button id="W" class="bg-white letterButton transition duration-300 ease-in-out">W</button>
@@ -67,7 +67,7 @@
         <button id="P" class="bg-white letterButton transition duration-300 ease-in-out">P</button>
       </div>
       <div
-        class="flex grid-row-1 text-3xl font-bold grid-cols-10 gap-4 py-5 justify-center"
+        class="flex grid-row-1 text-3xl font-bold grid-cols-10 gap-4 py-5 justify-center w-screen"
       >
         <button id="A" class="bg-white letterButton transition duration-300 ease-in-out">A</button>
         <button id="S" class="bg-white letterButton transition duration-300 ease-in-out">S</button>
@@ -81,7 +81,7 @@
       </div>
       
       <div
-        class="flex grid-row-1 text-3xl font-bold grid-cols-10 gap-4 py-5 justify-center"
+        class="flex grid-row-1 text-3xl font-bold grid-cols-10 gap-4 py-5 justify-center w-screen"
       >
         <button id="Z" class="bg-white letterButton transition duration-300 ease-in-out">Z</button>
         <button id="X" class="bg-white letterButton transition duration-300 ease-in-out">X</button>
@@ -92,16 +92,17 @@
         <button id="M" class="bg-white letterButton transition duration-300 ease-in-out">M</button>
       </div>
     
-
-    <button id="playButton"><img src="images/volume on.jpg" alt="Play"></button>
-    <button id="muteButton"><img src="images/volume off.jpg" alt="Mute"></button>
+    <section class="w-screen my-5">
+      <button id="playButton"><img src="images/volume on.jpg" alt="Play"></button>
+      <button id="muteButton"><img src="images/volume off.jpg" alt="Mute"></button>
+    </section>
       
     </div>
 
     
     
 
-    <div>
+    <div class="w-screen">
       <ul id="blanks-list" class="flex justify-center">
         
       </ul>
