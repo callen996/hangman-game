@@ -5,6 +5,7 @@ $('.letterButton').on('click', function() {
 	checkLetter()
 });
 
+
 var audio = new Audio('audio/Happy Hopping_Var1.wav');
     var playButton = document.getElementById('playButton');
     var muteButton = document.getElementById('muteButton');
@@ -145,13 +146,13 @@ function gameOver(win, score) {
     statusText.html("You lost! Your score is " + score);
   }
 
-  // Close the game over modal when the close button is clicked
+  // Close the game over modal when the close button is clicked and submitted
   var closeButton = $('#close-button');
   closeButton.on('click', function(event) {
     gameOverModal.css("display", "none");
   });
 
-  // Send name and score to local storage when the submit button is clicked
+  // Send name and score to local storage when the submit button is clicked and saved
   var nameInputBar = $('#name-input');
   var submitButton = $('#score-submit');
 
