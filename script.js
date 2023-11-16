@@ -302,7 +302,7 @@ function gameOver(win, score) {
   var gameOverModal = $('#game-over-modal')
   gameOverModal.css("display", "block");
 
-  // The rest
+  // Display a message based on whether the player won or lost
   var statusText = $('#status-text');
   if (win) {
     statusText.html("You won! Your score is " + score);
@@ -310,6 +310,12 @@ function gameOver(win, score) {
   else {
     statusText.html("You lost!");
   }
+
+  // Close the game over modal when the close button is clicked
+  var closeButton = $('#close-button');
+  closeButton.on('click', function(event) {
+    gameOverModal.css("display", "none");
+  });
 }
 
 gameOver(false, 2);

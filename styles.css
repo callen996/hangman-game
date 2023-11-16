@@ -277,6 +277,5 @@ button{
   display: none;
   position: fixed;
   z-index: 1;
-  overflow: auto;
   background-color: blue;
 }
