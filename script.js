@@ -127,14 +127,19 @@ function saveToLocalStorage(name, score) {
 
 // Iterates through local storage and displays the name/score pairs it contains
 function drawFromLocalStorage() {
-    for (i = 0; i < localStorage.length; i++) {
-        // Extract the name and score of each entry
-        var name = localStorage.key(i);
-        var score = JSON.parse(localStorage.getItem(localStorage.key(i)));
+  var scoreContainer = $('#score-content');
 
-        // This will be replaced by inserting the data into HTML elements later
-        console.log(name + ": " + score);
-    }
+  for (i = 0; i < localStorage.length; i++) {
+      // Extract the name and score of each entry
+      var name = localStorage.key(i);
+      var score = JSON.parse(localStorage.getItem(localStorage.key(i)));
+
+      // Send the score to the game over modal
+      var newScoreCard = $('<p>');
+      newScoreCard.html(name + ": " + score);
+
+      scoreContainer.append(newScoreCard);
+  }
 }
 // Displays the game over window and lets the player input their score
 // Win parameter is a boolean, set to true if the player won and false if they lost
@@ -151,6 +156,9 @@ function gameOver(win, score) {
   else {
     statusText.html("You lost! Your score is " + score);
   }
+
+  // Display saved scores
+  drawFromLocalStorage();
 
   // Close the game over modal when the close button is clicked and submitted
   var closeButton = $('#close-button');
