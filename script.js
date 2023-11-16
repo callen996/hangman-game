@@ -308,7 +308,7 @@ function gameOver(win, score) {
     statusText.html("You won! Your score is " + score);
   }
   else {
-    statusText.html("You lost!");
+    statusText.html("You lost! Your score is " + score);
   }
 
   // Close the game over modal when the close button is clicked
@@ -329,5 +329,3 @@ function gameOver(win, score) {
     }
   });
 }
-
-gameOver(true, 5);
