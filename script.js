@@ -34,6 +34,7 @@ var sadGif
 var blanksNum
 var clickedLetter
 var score = 6
+var guessedList = [".",".",".",".",".",".","."]
 
 // gets a random word from api and sets it to coresponding var
 fetch(randomWordUrl)
@@ -97,6 +98,8 @@ function checkLetter() {
 		if (clickedLetter == wordLetterList[i]) {
 			console.log("yep")
 			document.getElementById(i).textContent = wordLetterList[i]
+      guessedList[i] = clickedLetter
+      console.log(guessedList)
 		}
 	}
   if (wordLetterList.includes(clickedLetter) === false) {
@@ -105,6 +108,9 @@ function checkLetter() {
     console.log(score)
     console.log(sadGif)// set element on html to be this gif
     getSadGif()
+  }
+  if (JSON.stringify(wordLetterList) == JSON.stringify(guessedList)) {
+    gameOver(true, score)
   }
   if (score === 0) {
     gameOver(false, score)
