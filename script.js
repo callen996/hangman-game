@@ -23,6 +23,8 @@ var audio = new Audio('audio/Happy Hopping_Var1.wav');
 
 //could add random number for length of word --- current is length=7
 
+const hintBox = document.getElementById('hintBox');
+
 var randomWordUrl = "https://random-word-api.vercel.app/api?words=1&length=7&type=uppercase"
 var sadGifUrl = "https://api.giphy.com/v1/gifs/random?api_key=VZP80HfNoEAn2JpnCtbMfqEGN4HAuZF7&tag=sad&rating=pg-13"
 var guessThisWord
@@ -45,6 +47,22 @@ fetch(randomWordUrl)
     blanksNum = guessThisWord.length
     console.log(blanksNum)
     makeBlanks()
+    
+
+
+    // Code for getting the definition hint
+    var chosenWord = data[0];
+    console.log(data[0]);
+    var definitionUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/"
+
+    fetch(definitionUrl + chosenWord)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data[0].meanings[0].definitions[0].definition);
+        hintBox.textContent = data[0].meanings[0].definitions[0].definition
+      })
   });
   // gets a random sad gif from api to be used as a sort of point system
   getSadGif()
@@ -84,6 +102,11 @@ function checkLetter() {
     console.log("wrong")
     score--
     console.log(score)
+    console.log(sadGif)// set element on html to be this gif
+    getSadGif()
+  }
+  if (score === 0) {
+    gameOver(false, score)
   }
 }
 
@@ -105,4 +128,38 @@ function drawFromLocalStorage() {
         // This will be replaced by inserting the data into HTML elements later
         console.log(name + ": " + score);
     }
+}
+// Displays the game over window and lets the player input their score
+// Win parameter is a boolean, set to true if the player won and false if they lost
+function gameOver(win, score) {
+  // Display the game over modal
+  var gameOverModal = $('#game-over-modal')
+  gameOverModal.css("display", "block");
+
+  // Display a message based on whether the player won or lost
+  var statusText = $('#status-text');
+  if (win) {
+    statusText.html("You won! Your score is " + score);
+  }
+  else {
+    statusText.html("You lost! Your score is " + score);
+  }
+
+  // Close the game over modal when the close button is clicked
+  var closeButton = $('#close-button');
+  closeButton.on('click', function(event) {
+    gameOverModal.css("display", "none");
+  });
+
+  // Send name and score to local storage when the submit button is clicked
+  var nameInputBar = $('#name-input');
+  var submitButton = $('#score-submit');
+
+  submitButton.on('click', function(event) {
+    var name = nameInputBar.val();
+    // Only submit a score if a name has been entered
+    if (name !== "") {
+      saveToLocalStorage(name, score);
+    }
+  });
 }
