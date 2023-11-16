@@ -316,6 +316,18 @@ function gameOver(win, score) {
   closeButton.on('click', function(event) {
     gameOverModal.css("display", "none");
   });
+
+  // Send name and score to local storage when the submit button is clicked
+  var nameInputBar = $('#name-input');
+  var submitButton = $('#score-submit');
+
+  submitButton.on('click', function(event) {
+    var name = nameInputBar.val();
+    // Only submit a score if a name has been entered
+    if (name !== "") {
+      saveToLocalStorage(name, score);
+    }
+  });
 }
 
-gameOver(false, 2);
+gameOver(true, 5);
