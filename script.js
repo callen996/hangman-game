@@ -328,4 +328,4 @@ function gameOver(win, score) {
       saveToLocalStorage(name, score);
     }
   });
-}
+}}
