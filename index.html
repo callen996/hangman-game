@@ -33,7 +33,7 @@
       <div class="lg:content-auto w-screen">  
       <header class="container mx-auto h-40">
         <div class="flex container mx-auto justify-center align-middle my-5">
-          <h1 class="bg-blue-500 text-5xl text-clifford -skew-y-6" id="title">Hangman</h1>
+          <h1 class="bg-green-500 hover:bg-green-300 text-7xl underline decoration-sky-500 hover:decoration-blue-400 text-clifford text-blue-900 -skew-y-6" id="title">Hangman</h1>
         </div>
       </header>
     </div>
@@ -106,6 +106,18 @@
       <ul id="blanks-list" class="flex justify-center">
         
       </ul>
+    </div>
+
+    <!-- A pop-up screen for when the game ends, will be hidden from view by default -->
+    <div id="game-over-modal" class="modal">
+      <div class="modal-content">
+        <p>Game Over</p>
+        <p id="status-text"></p>
+
+        <input id="name-input" placeholder="Enter name here"></input>
+        <button id="score-submit">Submit</button>
+        <button id="close-button">Close</span>
+      </div>
     </div>
 
 
