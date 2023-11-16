@@ -40,6 +40,17 @@
     <div id="word"></div>
     <div id="guesses"></div>
     <div class="container mx-auto w-screen h-96" id="buttons">
+      <!-- Hint modal -->
+      <button class="hintModal" onclick="my_modal_3.showModal()">Need a hint?</button>
+      <dialog id="my_modal_3" class="modal rounded-lg ">
+        <div class="modal-box m-5">
+          <form method="dialog">
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 px-2 exit">✕</button>
+          </form>
+          <h3 class="font-bold text-lg ">Hint!</h3>
+          <p class="py-4" id="hintBox"></p>
+        </div>
+      </dialog>
       <!-- Add letter buttons here (A-Z) -->
       <div
         class="flex grid-row-1 text-3xl font-bold grid-cols-10 gap-4 py-5 justify-center"
@@ -80,6 +91,7 @@
         <button id="N" class="bg-white letterButton transition duration-300 ease-in-out">N</button>
         <button id="M" class="bg-white letterButton transition duration-300 ease-in-out">M</button>
       </div>
+    
 
     <button id="playButton"><img src="images/volume on.jpg" alt="Play"></button>
     <button id="muteButton"><img src="images/volume off.jpg" alt="Mute"></button>
