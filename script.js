@@ -294,4 +294,4 @@ window.onload = function () {
         comments();
       }
     }
-  }
+  }}
