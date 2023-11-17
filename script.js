@@ -5,6 +5,8 @@ $('.letterButton').on('click', function() {
 	checkLetter()
 });
 
+let mistakes = 0;
+
 
 var audio = new Audio('audio/Happy Hopping_Var1.wav');
     var playButton = document.getElementById('playButton');
@@ -108,6 +110,8 @@ function checkLetter() {
     console.log(score)
     console.log(sadGif)// set element on html to be this gif
     getSadGif()
+    mistakes++
+    updatePicture();
   }
   if (JSON.stringify(wordLetterList) == JSON.stringify(guessedList)) {
     gameOver(true, score)
@@ -177,4 +181,9 @@ function gameOver(win, score) {
       saveToLocalStorage(name, score);
     }
   });
+}
+
+
+function updatePicture() {
+  document.getElementById('hangman').src = './images/' + mistakes + '.png';
 }

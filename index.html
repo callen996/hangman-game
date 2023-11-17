@@ -37,9 +37,18 @@
         </div>
       </header>
     </div>
-    <div id="word"></div>
+    <div class="flex w-screen justify-center">
+      <img class="justify-center" id="hangman" src="./images/0.png">
+    </div>
+    <div id="word"> 
+      <div class="w-screen">
+        <ul id="blanks-list" class="flex justify-center text-sm">
+          
+        </ul>
+      </div>
+    </div>
     <div id="guesses"></div>
-    <div class="container mx-auto w-screen h-96" id="buttons">
+    <div class="container mx-auto w-screen mt-20" id="buttons">
       <!-- Hint modal -->
       <button class="hintModal mx-10" onclick="my_modal_3.showModal()">Need a hint?</button>
       <dialog id="my_modal_3" class="modal rounded-lg ">
@@ -102,11 +111,7 @@
     
     
 
-    <div class="w-screen">
-      <ul id="blanks-list" class="flex justify-center">
-        
-      </ul>
-    </div>
+  
 
     <!-- A pop-up screen for when the game ends, will be hidden from view by default -->
     <div id="game-over-modal" class="modal">
