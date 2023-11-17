@@ -76,7 +76,7 @@ fetch(randomWordUrl)
       return response.json();
     })
     .then(function (data) {
-      sadGif = data.data.url
+      sadGif = data.data.embed_url
       console.log(sadGif)
     });
   }
@@ -108,8 +108,7 @@ function checkLetter() {
     console.log("wrong")
     score--
     console.log(score)
-    console.log(sadGif)// set element on html to be this gif
-    getSadGif()
+    setSadGif()
     mistakes++
     updatePicture();
   }
@@ -121,9 +120,14 @@ function checkLetter() {
   }
 }
 
+//sets html element scr to sad gif
+function setSadGif() {
+  document.getElementById("sad"+score).setAttribute("src", sadGif)
+  console.log(document.getElementById("sad"+score))
+  getSadGif()
+}
 
 
-  
 // Saves an name/score pair to local storage, using the name as the key
 function saveToLocalStorage(name, score) {
     localStorage.setItem(name, JSON.stringify(score));
