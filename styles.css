@@ -280,7 +280,7 @@ button {
   top: 0%;
   left: 0%;
   z-index: 1;
-  background-color: green;
+  
 }
 
 
@@ -292,3 +292,4 @@ li {
   height: 340px;
   margin: 0;
 }
+

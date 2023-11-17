@@ -114,15 +114,17 @@
   
 
     <!-- A pop-up screen for when the game ends, will be hidden from view by default -->
-    <div id="game-over-modal" class="modal">
+    <div id="game-over-modal" class="modal p-4 rounded-lg ml-3 mt-3 bg-green-500">
       <div class="modal-content">
         <p>Game Over</p>
         <p id="status-text"></p>
-
-        <input id="name-input" placeholder="Enter name here"></input>
-        <button id="score-submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Submit</button>
-        <button id="close-button" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Close</span>
-        <button onClick="window.location.reload();" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Play Again?</button>  
+        
+        <input id="name-input" class="p-1" placeholder="Enter name here"></input>
+        <div class="py-2">
+          <button id="score-submit" class=" hintModal">Submit</button>
+          <button id="close-button" class="hintModal">Close</span></button>
+          <button onClick="window.location.reload();" class="hintModal ">Play Again?</button>  
+        </div>
       </div>
       <div id="score-content">
         <p>Scores</p>
