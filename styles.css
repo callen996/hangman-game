@@ -86,7 +86,8 @@
 
   .exit:hover {
     color: red;
-  }/* Variabes */  
+  }
+  /* Variabes */  
 $orange: #ffa600;
 $green: #c1d72e;
 $blue: #82d2e5;
@@ -275,7 +276,9 @@ button{
   }
 #game-over-modal {
   display: none;
-  position: fixed;
+  position: absolute;
+  top: 0%;
+  left: 0%;
   z-index: 1;
   background-color: green;
 }
