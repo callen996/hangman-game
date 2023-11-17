@@ -118,8 +118,9 @@ function checkLetter() {
 
 //sets html element scr to sad gif
 function setSadGif() {
-  document.getElementById("sad"+score).scr = sadGif
+  document.getElementById("sad"+score).setAttribute("src", sadGif)
   console.log(document.getElementById("sad"+score))
+  getSadGif()
 }
 
 
