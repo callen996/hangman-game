@@ -73,7 +73,7 @@ fetch(randomWordUrl)
       return response.json();
     })
     .then(function (data) {
-      sadGif = data.data.url
+      sadGif = data.data.embed_url
       console.log(sadGif)
     });
   }
@@ -105,8 +105,7 @@ function checkLetter() {
     console.log("wrong")
     score--
     console.log(score)
-    console.log(sadGif)// set element on html to be this gif
-    getSadGif()
+    setSadGif()
   }
   if (JSON.stringify(wordLetterList) == JSON.stringify(guessedList)) {
     gameOver(true, score)
@@ -116,9 +115,13 @@ function checkLetter() {
   }
 }
 
+//sets html element scr to sad gif
+function setSadGif() {
+  document.getElementById("sad"+score).scr = sadGif
+  console.log(document.getElementById("sad"+score))
+}
 
 
-  
 // Saves an name/score pair to local storage, using the name as the key
 function saveToLocalStorage(name, score) {
     localStorage.setItem(name, JSON.stringify(score));
