@@ -50,11 +50,11 @@
     <div id="guesses"></div>
     <div class="container mx-auto w-screen mt-20" id="buttons">
       <!-- Hint modal -->
-      <button class="hintModal mx-10" onclick="my_modal_3.showModal()" type="button">Need a hint?</button>
+      <button class="hintModal mx-10" onclick="my_modal_3.showModal()" id="hint" type="button">Need a hint?</button>
       <dialog id="my_modal_3" class="modal rounded-lg ">
         <div class="modal-box m-5">
           <form method="dialog">
-            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 px-2 exit" type="button">✕</button>
+            <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2 exit">✕</button>
           </form>
           <h3 class="font-bold text-lg ">Hint!</h3>
           <p class="py-4" id="hintBox"></p>
